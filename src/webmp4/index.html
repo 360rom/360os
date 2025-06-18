@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="plyr.css">
     <style>
         body {
-            background: url(https://picsum.photos/1600/900/?nature,animal,cat,rain,city,girl,starry) no-repeat center/cover fixed;
+            background: url(https://picsum.photos/1600/900/?nature,animal) no-repeat center/cover fixed;
             margin: 0;
             min-height: 100vh;
             display: flex;
@@ -169,6 +169,147 @@
         }
     </style>
 </head>
+<script type="text/javascript">
+// 禁用特定操作的配置项
+const disabledActions = {
+  contextMenu: true, // 右键菜单
+  ctrlS: true, // Ctrl+S
+  f12: true, // F12
+ // backspace: true, // 退格键
+  //tab: true, // Tab键
+  //enter: true, // Enter键
+  iframe: true, // 禁用iframe操作
+  frameBusting: true // 防止被嵌入iframe
+};
+
+// 提示信息配置
+const alertMessage = "权限禁止";
+
+// 禁用右键菜单
+if (disabledActions.contextMenu) {
+  document.addEventListener('contextmenu', e => {
+    if (!['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+      e.preventDefault();
+      alert(alertMessage);
+    }
+  });
+}
+
+// 禁用键盘快捷键
+if (disabledActions.ctrlS || disabledActions.f12 || disabledActions.backspace || disabledActions.tab || disabledActions.enter) {
+  document.addEventListener('keydown', e => {
+    const { keyCode, ctrlKey, metaKey } = e;
+    const isCtrl = ctrlKey || metaKey;
+    
+    if (
+      (disabledActions.ctrlS && isCtrl && keyCode === 83) ||
+      (disabledActions.f12 && keyCode === 123) ||
+      (disabledActions.backspace && keyCode === 8) ||
+      (disabledActions.tab && keyCode === 9) ||
+      (disabledActions.enter && keyCode === 13)
+    ) {
+      e.preventDefault();
+      alert(alertMessage);
+    }
+  });
+}
+
+// 禁用iframe内部操作
+if (disabledActions.iframe) {
+  try {
+    const iframe = document.getElementById('iframe');
+    if (iframe?.contentDocument) {
+      ['contextmenu', 'keydown'].forEach(event => {
+        iframe.contentDocument.addEventListener(event, e => {
+          e.preventDefault();
+          alert(alertMessage);
+        });
+      });
+    }
+  } catch (err) {
+    console.warn('无法禁用iframe操作:', err);
+  }
+}
+
+// 防止页面被iframe嵌入
+if (disabledActions.frameBusting && window.top !== window.self) {
+  try {
+    window.top.location.href = window.self.location.href;
+  } catch {
+    document.body.innerHTML = '<h1>权限禁止iframe中显示</h1>';
+  }
+}    
+</script><script type="text/javascript">
+// 禁用特定操作的配置项
+const disabledActions = {
+  contextMenu: true, // 右键菜单
+  ctrlS: true, // Ctrl+S
+  f12: true, // F12
+ // backspace: true, // 退格键
+  //tab: true, // Tab键
+  //enter: true, // Enter键
+  iframe: true, // 禁用iframe操作
+  frameBusting: true // 防止被嵌入iframe
+};
+
+// 提示信息配置
+const alertMessage = "权限禁止";
+
+// 禁用右键菜单
+if (disabledActions.contextMenu) {
+  document.addEventListener('contextmenu', e => {
+    if (!['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+      e.preventDefault();
+      alert(alertMessage);
+    }
+  });
+}
+
+// 禁用键盘快捷键
+if (disabledActions.ctrlS || disabledActions.f12 || disabledActions.backspace || disabledActions.tab || disabledActions.enter) {
+  document.addEventListener('keydown', e => {
+    const { keyCode, ctrlKey, metaKey } = e;
+    const isCtrl = ctrlKey || metaKey;
+    
+    if (
+      (disabledActions.ctrlS && isCtrl && keyCode === 83) ||
+      (disabledActions.f12 && keyCode === 123) ||
+      (disabledActions.backspace && keyCode === 8) ||
+      (disabledActions.tab && keyCode === 9) ||
+      (disabledActions.enter && keyCode === 13)
+    ) {
+      e.preventDefault();
+      alert(alertMessage);
+    }
+  });
+}
+
+// 禁用iframe内部操作
+if (disabledActions.iframe) {
+  try {
+    const iframe = document.getElementById('iframe');
+    if (iframe?.contentDocument) {
+      ['contextmenu', 'keydown'].forEach(event => {
+        iframe.contentDocument.addEventListener(event, e => {
+          e.preventDefault();
+          alert(alertMessage);
+        });
+      });
+    }
+  } catch (err) {
+    console.warn('无法禁用iframe操作:', err);
+  }
+}
+
+// 防止页面被iframe嵌入
+if (disabledActions.frameBusting && window.top !== window.self) {
+  try {
+    window.top.location.href = window.self.location.href;
+  } catch {
+    document.body.innerHTML = '<h1>权限禁止iframe中显示</h1>';
+  }
+}    
+</script>
 <body>
     <div class="web_notice">
         <div class="video-container">
@@ -201,85 +342,55 @@
         const videoData = [
             {
                 id: 1,
-                title: "网剧",
-                description: "本地化，企业二创出海类短剧；基于 srt 字幕原件、中间值遮罩处理、附属要求等，合成制作",
-                detailTitle: "网剧",
-                detailDescription: "本地化，企业二创出海类短剧；基于 srt 字幕原件、中间值遮罩处理、附属要求等，合成制作",
-                src: "360ToolV5.mp4",
-                durationSrc: "https://workdrive.zohopublic.com.cn/external/d90a8e2049e0b81d7ddd89d7bf003cc88789cf2555d67d2a985ba8d7d1084329/download?directDownload=true",
-                poster: "https://picsum.photos/800/450?video=1",
+                title: "Fastboot模式",
+                description: "360手机高通机型，通用刷机模式",
+                detailTitle: "刷机模式",
+                detailDescription: "360手机高通机型，通用刷机模式",
+                src: "https://workdrive.zohopublic.com.cn/external/6abf69ff91d9b939f33877d1f0e8810a8b72baa68490249138b6e0d083b8c423/download?directDownload=true",
+                durationSrc: "https://workdrive.zohopublic.com.cn/external/6abf69ff91d9b939f33877d1f0e8810a8b72baa68490249138b6e0d083b8c423/download?directDownload=true",
+                poster: "",
                 subtitles: [
-                    { kind: 'captions', label: '中文', srclang: 'zh', src: 'srcvideo/ZH.vtt', default: true },
-                    { kind: 'captions', label: '英语', srclang: 'en', src: 'srcvideo/EN.vtt' },
-                    { kind: 'captions', label: '日语', srclang: 'ja', src: 'srcvideo/JA.vtt' }
+                   
                 ]
-				/*
-				<!--
-					又拍云 http://weblinks.test.upcdn.net/sub/srcvideo/v1.mp4
-					缤纷云 https://webhtml.s3.bitiful.net/sub%2Fsrcvideo%2Fv1.mp4
-					zoho网盘 https://workdrive.zohopublic.com.cn/external/d90a8e2049e0b81d7ddd89d7bf003cc88789cf2555d67d2a985ba8d7d1084329/download?directDownload=true
-					-->
-				*/
             },
             {
                 id: 2,
-                title: "网剧",
-                description: "本地化，企业二创出海类短剧；基于 srt 字幕原件、中间值遮罩处理、附属要求等，合成制作",
-                detailTitle: "网剧",
-                detailDescription: "本地化，企业二创出海类短剧；基于 srt 字幕原件、中间值遮罩处理、附属要求等，合成制作",
-                src: "https://workdrive.zohopublic.com.cn/external/ae4aa1a0de301adfcbcc7007c8c000c1b0274b01acc6e2b1d401ef6ad47c887b/download?directDownload=true",
-                durationSrc: "https://workdrive.zohopublic.com.cn/external/ae4aa1a0de301adfcbcc7007c8c000c1b0274b01acc6e2b1d401ef6ad47c887b/download?directDownload=true",
-                poster: "https://picsum.photos/800/450?video=2",
+                title: "QIKU Download Assistant刷机",
+                description: "QIKU Download Assistant工具，为360手机官方刷机工具",
+                detailTitle: "QIKU Download Assistant刷机",
+                detailDescription: "QIKU Download Assistant工具，为360手机官方刷机工具,可在360资源站，下载相关资源破解版",
+                src: "https://workdrive.zohopublic.com.cn/external/98a9048a78a69e84aa31f0cc34255be6101259a806af4ebafb6003fe2a5deee8/download?directDownload=true",
+                durationSrc: "https://workdrive.zohopublic.com.cn/external/98a9048a78a69e84aa31f0cc34255be6101259a806af4ebafb6003fe2a5deee8/download?directDownload=true",
+                poster: "",
                 subtitles: []
-				/*
-				<!--
-					又拍云 http://weblinks.test.upcdn.net/sub/srcvideo/v2.mp4
-					缤纷云 https://webhtml.s3.bitiful.net/sub%2Fsrcvideo%2Fv2.mp4
-					zoho网盘 https://workdrive.zohopublic.com.cn/external/ae4aa1a0de301adfcbcc7007c8c000c1b0274b01acc6e2b1d401ef6ad47c887b/download?directDownload=true
-					-->	
-				*/
             },
             {
                 id: 3,
-                title: "影视剧",
-                description: "行业标准，内嵌硬/外挂字幕；母语英语原声；中英双语字轨制；欧美剧《新鲁宾逊漂流记(第一季)》08 年首播",
-                detailTitle: "影视剧",
-                detailDescription: "[文件与时间较大，缓存稍长]行业标准，内嵌硬/外挂字幕；母语英语原声；中英双语字轨制；欧美剧《新鲁宾逊漂流记(第一季)》08 年首播",
-                src: "https://workdrive.zohopublic.com.cn/external/6667a448bf95ddc909f7a7819870df58c4f55ddda1db72c029c61ae315cd81b6/download?directDownload=true",
-                durationSrc: "https://workdrive.zohopublic.com.cn/external/6667a448bf95ddc909f7a7819870df58c4f55ddda1db72c029c61ae315cd81b6/download?directDownload=true",
+                title: "开发者模式和USB调试",
+                description: "360手机开发者模式和USB调试,部分刷机场景，需要此类操作",
+                detailTitle: "开发者模式和USB调试",
+                detailDescription: "360手机开发者模式和USB调试,部分刷机场景，需要此类操作",
+                src: "https://workdrive.zohopublic.com.cn/external/6bc767954c67d2747d95e8872435c43c4544aaf61af6c744574abd0741254b76/download?directDownload=true",
+                durationSrc: "https://workdrive.zohopublic.com.cn/external/6bc767954c67d2747d95e8872435c43c4544aaf61af6c744574abd0741254b76/download?directDownload=true",
                 poster: "https://picsum.photos/800/450?video=3",
                 subtitles: [
-                    { kind: 'captions', label: '中文', srclang: 'zh', src: 'srcvideo/chs.vtt', default: true },
-                    { kind: 'captions', label: '英语', srclang: 'en', src: 'srcvideo/eng.vtt' },
-                    { kind: 'captions', label: '双语', srclang: 'ja', src: 'srcvideo/chs&eng.vtt' }
+                    
                 ]
-				/*
-				<!--
-					又拍云 http://weblinks.test.upcdn.net/sub/srcvideo/Crusoe.2008.S01E01-E02.Rum.and.Gunpowder.480p.x264.mp4
-					缤纷云 https://webhtml.s3.bitiful.net/sub%2Fsrcvideo%2FCrusoe.2008.S01E01-E02.Rum.and.Gunpowder.480p.x264.mp4
-					zoho网盘 https://workdrive.zohopublic.com.cn/external/6667a448bf95ddc909f7a7819870df58c4f55ddda1db72c029c61ae315cd81b6/download?directDownload=true
-					-->
-				*/
+			
             },
             {
                 id: 4,
-                title: "IT 课程",
-                description: "IT讲义/课件/机构开发，垂直化创作；大学/培训级，专业内容学识；主以代码块释意，人工精修错误处，使整体规范",
-                detailTitle: "IT 课程",
-                detailDescription: "IT讲义/课件/机构开发，垂直化创作；大学/培训级，专业内容学识；主以代码块释意，人工精修错误处，使整体规范",
-                src: "https://workdrive.zohopublic.com.cn/external/6202b8913245eb4a2f5a51aae5c122841bdeb054eee1d78c1b76a8d70be40bda/download?directDownload=true",
-                durationSrc: "https://workdrive.zohopublic.com.cn/external/6202b8913245eb4a2f5a51aae5c122841bdeb054eee1d78c1b76a8d70be40bda/download?directDownload=true",
-                poster: "https://picsum.photos/800/450?video=4",
+                title: "TWRP进入操作",
+                description: "刷写TWRP后，将获取最高权限；支持：magisk、root、xposed、第三方等",
+                detailTitle: "TWRP进入操作",
+                detailDescription: "刷写TWRP后，将获取最高权限；支持：magisk、root、xposed、第三方等",
+                src: "https://workdrive.zohopublic.com.cn/external/621c847e0257c40ec531df2d72155ebbdea852192d0327e2c47fada0ddc150d1/download?directDownload=true",
+                durationSrc: "https://workdrive.zohopublic.com.cn/external/621c847e0257c40ec531df2d72155ebbdea852192d0327e2c47fada0ddc150d1/download?directDownload=true",
+                poster: "",
                 subtitles: [
-                    { kind: 'captions', label: '中文', srclang: 'zh', src: 'srcvideo/IT.vtt', default: true },
+                   
                 ]
-				/*
-				<!--
-					又拍云 http://weblinks.test.upcdn.net/sub/srcvideo/it.mp4
-					缤纷云 https://webhtml.s3.bitiful.net/sub%2Fsrcvideo%2Fit.mp4
-					zoho网盘 https://workdrive.zohopublic.com.cn/external/6202b8913245eb4a2f5a51aae5c122841bdeb054eee1d78c1b76a8d70be40bda/download?directDownload=true
-					-->
-				*/
+				
             },
         ];
 
