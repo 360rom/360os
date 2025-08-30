@@ -12,312 +12,102 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
   <base href="https://360os.top" />
   <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" type="text/css" href="https://360rom.github.io/css/style_4_common.css" />
+
   <link rel="stylesheet" href="https://360rom.github.io/src/webmp3/css/player.css" />
-  <link rel="stylesheet" type="text/css" href="https://360rom.github.io/css/list.min.css">
+
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-
   <style>
-    /* 模态框样式 */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
+    * { word-wrap: break-word; }
+    body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset { margin: 0; padding: 0; }
+    body, input, button, select, textarea {
+      font: 14px/1.6 'Microsoft Yahei', Tahoma, 'Simsun', Arial, Helvetica, STHeiti;
+      color: #444;
     }
-
-    /* 修改模态框内容区域的样式 */
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      /* 调整上下外边距，让模态框垂直居中更合适 */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 60%;
-      /* 调整宽度为 60%，可根据需要修改 */
-      max-height: 80%;
-      /* 设置最大高度为视口高度的 80% */
-      overflow-y: auto;
-      /* 当内容超出最大高度时显示垂直滚动条 */
+    ul li { list-style: none; }
+    a { color: #333; text-decoration: none !important; } /* 全局去下划线 */
+    a:hover { text-decoration: none !important; color: #2ec7bb; }
+    img { border: none; }
+    .clearfix:after, .version-list:after { content: ""; display: table; clear: both; }
+    .clearfix, .cl, .version-list { zoom: 1; }
+    .z { float: left; }
+    .y { float: right; }
+    .cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+    .cl { zoom: 1; }
+    .xm_header_top { background-color: #757575; height: 30px; min-width: 1240px; }
+    .xm_header_top_ul { width: 1240px; margin: 0 auto; padding-top: 5px; }
+    .pipe-head { margin: 0 5px; color: #d3d3d3; }
+    .main-content {
+      background-color: #fff;
+      margin: 3px auto;
+      padding: 1px 24px;
+      max-width: 1200px;
+      border-radius: 0px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
     }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    /* 新增/修改的CSS样式 */
-    .modal-content {
-      position: relative;
-      /* 为绝对定位的关闭按钮提供参考 */
-      padding-top: 60px;
-      /* 为顶部的关闭按钮留出空间 */
-      border-radius: 12px;
-      /* 可选：添加圆角 */
-    }
-
-    .close {
-      position: absolute;
-      top: 15px;
-      /* 距离模态框顶部的距离 */
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 28px;
-      font-weight: bold;
-      color: #888;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: #f0f0f0;
-      /* 浅灰色背景 */
-      transition: all 0.2s ease;
-      z-index: 1;
-      /* 确保在模态框内容之上 */
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #ff4d4f;
-      /* 悬停时变为红色 */
-      background: #f8f8f8;
-      /* 悬停时背景变亮 */
-      transform: translateX(-50%) scale(1.1);
-    }
-
-    /* 右侧固定按钮样式 */
-    .fixed-buttons {
-      position: fixed;
-      right: 10px;
-      /* 更靠近右侧边缘 */
-      top: 50%;
-      /* 垂直居中 */
-      transform: translateY(-50%);
-      /* 精确垂直居中 */
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* 修改这里，让按钮大小可自定义 */
-    .fixed-buttons img {
-      display: block;
-      width: auto;
-      /* 自动宽度，让图片保持原始比例 */
-      height: auto;
-      /* 自动高度，让图片保持原始比例 */
-      max-width: 35px;
-      /* 最大宽度 */
-      max-height: 50px;
-      /* 最大高度 */
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    /* 客服图片样式，让其完美呈现 */
-    #service-btn {
-      width: auto;
-      /* 自动宽度，保持原始比例 */
-      height: auto;
-      /* 自动高度，保持原始比例 */
-      max-width: 100%;
-      /* 最大宽度为父元素宽度 */
-      max-height: 100%;
-      /* 最大高度为父元素高度 */
-    }
-
-    /* 二维码样式 */
-    #qrcode {
-      display: none;
-      position: fixed;
-      right: 60px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 999;
-    }
-
-    #qrcode img {
-      width: 150px;
-      height: 150px;
-    }
-
-    /* 页脚优化样式 */
+    /* 页脚样式简化 */
     .xm_footer {
       background: #f7f8fa;
       padding: 24px 0 10px 0;
-      /* 上下间距更紧凑 */
-      font-size: 16px;
       color: #222;
       border-top: 1px solid #eaeaea;
-    }
-
-    .xm_footerInner {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .xm_footerInnerInner {
       text-align: center;
-      margin-bottom: 8px;
-      /* 更紧凑 */
-    }
-
-    .xm_footer .links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      /* 更紧凑 */
       font-size: 16px;
-      line-height: 1.6;
-      color: #222;
-      /* 文字颜色黑 */
     }
-
-    .xm_footer .links a {
-      color: #222;
-      /* 文字颜色黑 */
-      text-decoration: none !important;
-      /* 去除下划线 */
-      margin: 0 6px;
-      font-size: 16px;
-      transition: color 0.2s;
-    }
-
-    .xm_footer .links a:hover {
-      color: #ff4d4f;
-      text-decoration: none !important;
-      /* 悬停也无下划线 */
-    }
-
-    .xm_footer hr {
-      border: none;
-      border-top: 1px solid #eaeaea;
-      margin: 12px 0;
-      /* 更紧凑 */
-    }
-
-    .xm_footer .site-info {
-      color: #222;
-      /* 文字颜色黑 */
-      font-size: 16px;
-      margin-bottom: 4px;
-      /* 更紧凑 */
-    }
-
-    .xm_footer .adult-link {
-      font-size: 16px;
-      color: #222;
-      /* 文字颜色黑 */
-      font-weight: bold;
-      margin-top: 4px;
-      display: inline-block;
-      text-decoration: none !important;
-    }
-
-    #QPlayer {
-      margin: 18px auto 0 auto;
-      /* 更紧凑 */
-      max-width: 400px;
-    }
-
-    /* 运行时间显示区域与上方间距更小 */
-    #showsectime {
-      display: block;
-      margin-top: 8px;
-      margin-bottom: 0;
-    }
-
-    /* 微信二维码弹窗位置调整 */
-    #wechat-qrcode {
-      visibility: hidden;
-      opacity: 0;
-      transition: all 0.2s;
-      position: fixed;
-      z-index: 10000;
-      background: #fff;
-      padding: 8px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 120px;
-      /* 与二维码图片高度一致 */
-    }
-
-    /* 新增提示添加右上角提示样式 */
-    .permission-alert {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
-      color: white;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 14px;
-      z-index: 99999;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
-    }
-
-    .permission-alert.show {
-      opacity: 1;
-    }
+    .xm_footerInner { margin: 0 auto; }
+    .xm_footerInnerInner { text-align: center; }
+    .xm_footer .links { display: inline-block; }
+    .xm_footer .links a { color: #222; margin: 0 6px; font-size: 16px; }
+    .xm_footer hr { border: none; border-top: 1px solid #eaeaea; margin: 12px 0; }
+    .xm_footer .site-info { color: #222; font-size: 16px; }
+    .xm_footer .adult-link { font-size: 16px; color: #222; font-weight: bold; margin-top: 4px; display: inline-block; }
+    #QPlayer { margin: 18px auto 0 auto; max-width: 400px; }
+    /* 已运行居中 */
+    #showsectime { display: block; margin: 16px auto 0 auto; text-align: center; }
+    .fixed-bottom-buttons { position: fixed; right: 18px; bottom: 18px; z-index: 9999; display: flex; flex-direction: column; gap: 16px; }
+    .fixed-bottom-buttons > div { box-shadow: 0 2px 8px rgba(0,0,0,0.12); background: #fff; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
+    .list-t { margin: 0 30px; border-bottom: 1px solid #e9e9e9; line-height: 66px; }
+    .list-t>span { font-size: 24px; color: #3c3c3c; float: left; }
+    .version-list li { float: left; width: 25%; text-align: center; margin-top: 40px; }
+    .version-list li img { width: 175px; height: 204px; }
+    .version-list li p { font-size: 16px; line-height: 40px; }
+    /* 模态框样式 */
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4); }
+    .modal-content { background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 60%; max-height: 80%; overflow-y: auto; position: relative; padding-top: 60px; border-radius: 12px; }
+    .close { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); font-size: 28px; font-weight: bold; color: #888; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #f0f0f0; transition: all 0.2s ease; z-index: 1; }
+    .close:hover, .close:focus { color: #ff4d4f; background: #f8f8f8; transform: translateX(-50%) scale(1.1); }
+    .fixed-buttons { position: fixed; right: 10px; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; align-items: center; }
+    .fixed-buttons img { display: block; width: auto; height: auto; max-width: 35px; max-height: 50px; margin-bottom: 10px; cursor: pointer; }
+    #service-btn { width: auto; height: auto; max-width: 100%; max-height: 100%; }
+    #qrcode { display: none; position: fixed; right: 60px; top: 50%; transform: translateY(-50%); z-index: 999; }
+    #qrcode img { width: 150px; height: 150px; }
+    #wechat-qrcode { visibility: hidden; opacity: 0; transition: all 0.2s; position: fixed; z-index: 10000; background: #fff; padding: 8px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); display: flex; align-items: center; justify-content: center; height: 120px; }
+    .permission-alert { position: fixed; top: 20px; right: 20px; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4)); color: white; padding: 8px 16px; border-radius: 4px; font-size: 14px; z-index: 99999; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+    .permission-alert.show { opacity: 1; }
   </style>
-
-  <!--头条搜推js -->
+  <!-- ...existing code... -->
 </head>
 <script type="text/javascript">
-  // 禁用特定操作的配置项
-  const disabledActions = {
-    contextMenu: true, // 右键菜单
-    ctrlS: true, // Ctrl+S
-    f12: true, // F12
-    // backspace: true, // 退格键
-    // tab: true, // Tab键
-    // enter: true, // Enter键
-    iframe: true, // 禁用iframe操作
-    frameBusting: true // 防止被嵌入iframe
-  };
-
-  // 提示信息配置
-  function showPermissionAlert(message = "权限禁止") {
-    let alertEl = document.querySelector('.permission-alert');
-    if (!alertEl) {
-      alertEl = document.createElement('div');
-      alertEl.className = 'permission-alert';
-      document.body.appendChild(alertEl);
-    }
-    alertEl.textContent = message;
-    alertEl.classList.add('show');
-    setTimeout(() => {
-      alertEl.classList.remove('show');
-    }, 2000);
-  }
-
-  // 合并禁用右键菜单和快捷键事件
+  // 优化后的禁用操作和提示
   document.addEventListener('DOMContentLoaded', function () {
+    const disabledActions = {
+      contextMenu: true,
+      ctrlS: true,
+      f12: true,
+      iframe: true,
+      frameBusting: true
+    };
+    function showPermissionAlert(message = "权限禁止") {
+      let alertEl = document.querySelector('.permission-alert');
+      if (!alertEl) {
+        alertEl = document.createElement('div');
+        alertEl.className = 'permission-alert';
+        document.body.appendChild(alertEl);
+      }
+      alertEl.textContent = message;
+      alertEl.classList.add('show');
+      setTimeout(() => alertEl.classList.remove('show'), 2000);
+    }
     if (disabledActions.contextMenu) {
       document.addEventListener('contextmenu', function (e) {
         if (!['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
@@ -326,23 +116,17 @@
         }
       });
     }
-    if (disabledActions.ctrlS || disabledActions.f12 || disabledActions.backspace || disabledActions.tab || disabledActions.enter) {
-      document.addEventListener('keydown', function (e) {
-        const { keyCode, ctrlKey, metaKey } = e;
-        const isCtrl = ctrlKey || metaKey;
-        if (
-          (disabledActions.ctrlS && isCtrl && keyCode === 83) ||
-          (disabledActions.f12 && keyCode === 123) ||
-          (disabledActions.backspace && keyCode === 8) ||
-          (disabledActions.tab && keyCode === 9) ||
-          (disabledActions.enter && keyCode === 13)
-        ) {
-          e.preventDefault();
-          showPermissionAlert();
-        }
-      });
-    }
-    // 禁用iframe内部操作
+    document.addEventListener('keydown', function (e) {
+      const { keyCode, ctrlKey, metaKey } = e;
+      const isCtrl = ctrlKey || metaKey;
+      if (
+        (disabledActions.ctrlS && isCtrl && keyCode === 83) ||
+        (disabledActions.f12 && keyCode === 123)
+      ) {
+        e.preventDefault();
+        showPermissionAlert();
+      }
+    });
     if (disabledActions.iframe) {
       try {
         const iframe = document.getElementById('iframe');
@@ -358,7 +142,6 @@
         console.warn('无法禁用iframe操作:', err);
       }
     }
-    // 防止页面被iframe嵌入
     if (disabledActions.frameBusting && window.top !== window.self) {
       try {
         window.top.location.href = window.self.location.href;
@@ -368,8 +151,7 @@
     }
   });
 </script>
-<!-- part 1 -->
-
+<!-- ...existing code... -->
 <body id="nv_forum" class="pg_romproduct" onkeydown="if(event.keyCode==27) return false;">
   <!--顶部横条信息-->
   <header class="xm_header_top">
@@ -587,7 +369,8 @@
     <div class="xm_footerInner">
       <div style="clear:both;"></div>
       <div class="xm_footerInnerInner">
-        <div class="links">
+        <!-- 独占一行：链接 -->
+        <div class="links" style="display:block;margin-bottom:8px;">
           <span>
             <a href="https://360rom.github.io/src/notice/index.html" target="_blank">公告</a> |
 			<a href="https://360rom.github.io/src/donation/index.html" target="_blank">客服</a> |
@@ -595,16 +378,19 @@
             <a href="src/webmp4/index.html" target="_blank">视频教程</a> |
             <a href="src/check/index.html" target="_blank">刷机检测</a> |
             <a href="https://360rom.github.io/verify/index.html" target="_blank">资源下载</a> |
+            <a href="javascript:void(0);" id="evaluateLink">用户评价</a> | <!-- 新增 -->
             <a href="javascript:void(0);" id="aboutLink">关于</a> |
             <script type="text/javascript" src="//js.users.51.la/21405253.js"></script>
           </span>
-          <span class="site-info">
-            新网站/域名：
-            <a href="https://360rom.github.io/" target="_blank" style="color:#222 !important;">360rom.github.io</a>
-          </span>
-          <a href="https://h5.lot-ml.com/ProductEn/Index/2d52273e3f038d26" target="_blank" class="adult-link"
-            style="color:#222 !important;">🔞成人福利 深夜独享</a>
-
+        </div>
+        <!-- 独占一行：域名 -->
+        <div class="site-info" style="display:block;margin-bottom:8px;">
+          新网站/域名：
+          <a href="https://360rom.github.io/" target="_blank" style="color:#222 !important;">360rom.github.io</a>
+        </div>
+        <!-- 独占一行：成人福利 -->
+        <div style="display:block;">
+          <a href="https://h5.lot-ml.com/ProductEn/Index/2d52273e3f038d26" target="_blank" class="adult-link" style="color:#222 !important;">🔞成人福利 深夜独享</a>
         </div>
       </div>
       <hr>
@@ -617,7 +403,15 @@
           <p style="font-size: 20px; font-weight: bold; color: #7a7a7a; margin: 10px 0 0 0;">投递：os@360os.top</p>
         </div>
       </div>
-      <!--webmp3 -->
+      <!-- 用户评价 iframe 模态框 -->
+      <div id="evaluateModal" class="modal">
+        <div class="modal-content" style="width: 90%; max-width: 600px; height: 80vh; padding:0; position:relative;">
+          <span class="close" id="closeEvaluateModal"
+            style="top: 5px; left: 50%; transform: translateX(-50%); width: 30px; height: 30px; font-size: 24px; position: absolute; z-index:2;">×</span>
+          <iframe src="src/evaluate/index.html" frameborder="0" style="width:100%;height:100%;border-radius:12px;"></iframe>
+        </div>
+      </div>
+      <!--webmp3 -->`
       <div id="QPlayer">
         <div id="pContent">
           <div id="player">
@@ -674,74 +468,42 @@
             lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
           }
         }
-
         window.onload = bgChange;
       </script>
 
-      <script>
-        setInterval("cg.innerHTML=new Date().toLocaleString()", 1000);
-      </script>
-
       <!--运行时间显示 -->
-      <span id="showsectime" class="text-[clamp(0.6rem,0.8vw,0.8rem)] font-mono text-[#8B814C]"></span>
+      <span id="showsectime" class="text-[clamp(0.6rem,0.8vw,0.8rem)] font-mono text-[#8B814C]" style="display:block;text-align:center;margin:16px auto 0 auto;"></span>
 
       <script>
-        // 初始化函数，减少全局变量
-        function initTimeDisplay() {
-          // 目标日期 - 使用更简洁的方式设置
+        // 优化运行时间显示
+        document.addEventListener('DOMContentLoaded', function () {
           const birthDay = new Date('2022-03-16T00:00:00Z');
-
-          // 更新时间显示的函数
           function updateTime() {
             const now = new Date();
-            const timeDiff = now - birthDay;
-
-            // 计算各时间单位
-            const seconds = Math.floor(timeDiff / 1000);
+            const seconds = Math.floor((now - birthDay) / 1000);
             const days = Math.floor(seconds / 86400);
             const hours = Math.floor((seconds % 86400) / 3600);
             const minutes = Math.floor((seconds % 3600) / 60);
             const secs = seconds % 60;
-
-            // 彩色数字显示
             document.getElementById('showsectime').innerHTML =
               `已运行：<span style="color:#ff4d4f;font-weight:bold;">${days}天</span>` +
               `<span style="color:#1890ff;font-weight:bold;">${hours}小时</span>` +
               `<span style="color:#52c41a;font-weight:bold;">${minutes}分</span>` +
               `<span style="color:#faad14;font-weight:bold;">${secs}秒</span>`;
           }
-
-          // 立即更新一次
           updateTime();
-          // 设置定时器，使用箭头函数更简洁
           setInterval(updateTime, 1000);
-        }
-
-        // 页面加载后初始化
-        document.addEventListener('DOMContentLoaded', initTimeDisplay);
+        });
       </script>
 
       <!-- 移动端设备判断和跳转 -->
       <script type="text/javascript">
-        function browserRedirect() {
-          var sUserAgent = navigator.userAgent.toLowerCase();
-          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-          var bIsAndroid = sUserAgent.match(/android/i) == "android";
-          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-
-          if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            window.location.href = 'https://360os.top/index.htm';
-          } else {
-            // window.location= '';
-          }
-        }
-
-        browserRedirect(); //调用自身，页面一打开就开始跳转
+        // 优化移动端跳转
+        (function () {
+          var ua = navigator.userAgent.toLowerCase();
+          var isMobile = /ipad|iphone os|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/i.test(ua);
+          if (isMobile) window.location.href = 'https://360os.top/index.htm';
+        })();
       </script>
     </div>
   </footer>
@@ -903,6 +665,80 @@
             emailModal.style.display = "none";
           }
         };
+      }
+    });
+  </script>
+  <script>
+    // 模态框支持框外点击和ESC退出
+    document.addEventListener('DOMContentLoaded', function () {
+      // 邮件模态框功能
+      var emailModal = document.getElementById("emailModal");
+      var emailLink = document.getElementById("emailLink");
+      var closeEmailModal = document.getElementById("closeEmailModal");
+
+      if (emailLink && emailModal && closeEmailModal) {
+        emailLink.onclick = function () {
+          emailModal.style.display = "block";
+        };
+        closeEmailModal.onclick = function () {
+          emailModal.style.display = "none";
+        };
+        window.addEventListener('click', function (event) {
+          if (event.target == emailModal) {
+            emailModal.style.display = "none";
+          }
+        });
+        window.addEventListener('keydown', function (event) {
+          if (event.key === "Escape" && emailModal.style.display === "block") {
+            emailModal.style.display = "none";
+          }
+        });
+      }
+
+      // 关于模态框功能
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("aboutLink");
+      var span = document.getElementById("closeBtn");
+      if (btn && modal && span) {
+        btn.onclick = function () {
+          modal.style.display = "block";
+        };
+        span.onclick = function () {
+          modal.style.display = "none";
+        };
+        window.addEventListener('click', function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+        window.addEventListener('keydown', function (event) {
+          if (event.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+          }
+        });
+      }
+
+      // 用户评价模态框功能
+      var evaluateModal = document.getElementById("evaluateModal");
+      var evaluateLink = document.getElementById("evaluateLink");
+      var closeEvaluateModal = document.getElementById("closeEvaluateModal");
+      if (evaluateLink && evaluateModal && closeEvaluateModal) {
+        evaluateLink.onclick = function () {
+          evaluateModal.style.display = "block";
+        };
+        closeEvaluateModal.onclick = function () {
+          evaluateModal.style.display = "none";
+        };
+        window.addEventListener('click', function (event) {
+          if (event.target == evaluateModal) {
+            evaluateModal.style.display = "none";
+          }
+        });
+        window.addEventListener('keydown', function (event) {
+          if (event.key === "Escape" && evaluateModal.style.display === "block") {
+            evaluateModal.style.display = "none";
+          }
+        });
       }
     });
   </script>
