@@ -17,7 +17,51 @@
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.6;
+            position: relative; /* 新增：为侧线提供定位基准 */
+            overflow-x: hidden; /* 防止横向滚动 */
         }
+        /* 右侧滑线下拉装饰 */
+        .side-decoration {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100vh;
+            background: linear-gradient(180deg, #3498db 0%, #2980b9 100%);
+            transform: translateX(calc(100% - 2px)); /* 初始只显示2px */
+            transition: transform 0.5s ease;
+            z-index: 100;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        /* 下滑线动画元素 */
+        .side-decoration::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+            animation: slideDown 3s infinite;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        @keyframes slideDown {
+            0% {
+                top: -30%;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        
+        /* 鼠标悬停时展开 */
+        .side-decoration:hover {
+            transform: translateX(0);
+            box-shadow: -2px 0 10px rgba(52, 152, 219, 0.3);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -126,6 +170,10 @@
             .review-card {
                 padding: 20px;
             }
+            /* 移动端调整装饰线 */
+            .side-decoration {
+                width: 3px;
+            }
         }
         @media (max-width: 480px) {
             .page-title {
@@ -158,6 +206,9 @@
     </style>
 </head>
 <body>
+    <!-- 右侧装饰线 -->
+    <div class="side-decoration"></div>
+    
     <div class="container">
         <h1 class="page-title">用户真实评价</h1>
         <div class="reviews-container" id="reviewsContainer">
