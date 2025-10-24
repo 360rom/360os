@@ -263,6 +263,8 @@
     <div
       style="position: relative;width: 90%;max-width: 700px;background: #FFF;border-radius: 40px;padding: 60px 40px;box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
       <div style="font-size: 16px;margin-top: 10px;line-height: 28px;color: #666;">
+        <p style="text-align: left;"><strong>资源：</strong><a href="https://tool.360os.top"
+            target="_blank">tool.360os.top</a></p>
         <p style="text-align: left;"><strong>问卷：</strong><a href="https://wj.qq.com/s2/24520404/73b6/"
             target="_blank">调查</a></p>
         <p style="text-align: left;"><strong style="color: red;">关于：</strong>更新时间：<span
@@ -403,23 +405,26 @@
 
     browserRedirect(); //调用自身，页面一打开就开始跳转
 
-
-    // 动态设置更新时间
-    function setUpdateTime() {
-      const now = new Date();
-      const year = now.getFullYear();
-      const month = now.getMonth() + 1;
-      // 只显示年份和月份，不显示日期
-      const updateTimeStr = `${year}年${month}月`;
-
-      const updateTimeElement = document.getElementById('updateTime');
-      if (updateTimeElement) {
-        updateTimeElement.textContent = updateTimeStr;
-      }
-    }
-
     // 页面加载完成后执行
     window.addEventListener('DOMContentLoaded', setUpdateTime);
+
+   // 动态设置更新时间
+function setUpdateTime() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  // 只显示年份和月份，不显示日期
+  const updateTimeStr = `${year}年${month}月`;
+
+  const updateTimeElement = document.getElementById('updateTime');
+  if (updateTimeElement) {
+    updateTimeElement.textContent = updateTimeStr;
+  }
+}
+
+// 立即执行函数
+setUpdateTime();
+
   </script>
   <!-- 权限提示弹窗 -->
   <div class="permission-alert"></div>
