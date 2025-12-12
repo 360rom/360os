@@ -2,506 +2,430 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>免费windows许可证授权中心</title>
-    <meta name="keywords" content="Windows许可证, 免费激活, 系统授权, Windows激活工具, 正版授权, 许可证密钥, 激活教程">
-    <meta name="description" content="提供Windows系统和Office的正版授权信息、激活教程和相关服务，帮助用户合法使用软件产品。">
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="icon" href="favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/winmain.css">
+  <meta charset="utf-8" />
+  <meta name="baidu-site-verification" content="codeva-dCMsLe1AR4" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>360手机-360手机刷机RootTwrp</title>
+  <meta name="description" content="360手机官方资源站:全网唯一可用，支持刷机解锁救砖Twrp/Root/Magisk教程与位置穿越功能修复，免费下载360手机刷机包" />
+  <meta name="keywords"
+    content="360手机 360手机解锁 360手机刷机救砖 360手机刷机包分享 360手机纯净无广告系统 360手机位置穿越 酷派奇酷刷机 CPB解包 QGDP破解版 360手机TwrpRootMagisk QikuDownloadAssistant 360N5 360N5S 360N6 360N6Lite 360N6PRO 360N7 360N7Lite 360N7Pro 360Q5 360Q5Plus" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <base href="https://360os.top" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="stylesheet" href="src/webmp3/css/player.css">
+  <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/page_main.css">
 </head>
 
 <body>
-    <!-- 导航栏代码 -->
-<nav class="top-navbar">
-    <div class="container navbar-container">
-        <div class="navbar-brand">
-            <a href="#hero" aria-label="回到顶部">
-                <img src="favicon.svg" alt="Windows" class="brand-logo"> 软件正版数字化
-            </a>
-        </div>
-        <ul class="navbar-nav">
-            <li class="nav-item"><a href="#core-services">核心服务</a></li>
-            <li class="nav-item"><a href="#purchase">正版选购</a></li>
-            <li class="nav-item"><a href="#products">产品展示</a></li>
-            <li class="nav-item"><a href="#comparison">版本对比</a></li>
-            <li class="nav-item"><a href="#device-info">设备信息</a></li>
-        </ul>
-
-        <button id="hamburgerBtn" class="hamburger-btn" aria-label="打开菜单"><i class="fa fa-bars"></i></button>
-
-        <a href="https://signup.microsoft.com/" target="_blank" class="btn btn-outline login-button">
-            <i class="fa fa-user-circle-o"></i> 登录/注册
-        </a>
-    </div>
-</nav>
-
-<!-- 移动侧边栏与遮罩（新增） -->
-<div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
-<aside id="mobileSidebar" class="mobile-sidebar" aria-hidden="true">
-    <button id="sidebarClose" class="sidebar-close" aria-label="关闭">×</button>
-    <nav style="margin-top:38px;">
-        <ul style="list-style:none;padding:0;margin:0;">
-            <li style="margin:12px 0;"><a href="#core-services" style="color:#2c3e50;">核心服务</a></li>
-            <li style="margin:12px 0;"><a href="#purchase" style="color:#2c3e50;">正版选购</a></li>
-            <li style="margin:12px 0;"><a href="#products" style="color:#2c3e50;">产品展示</a></li>
-            <li style="margin:12px 0;"><a href="#comparison" style="color:#2c3e50;">版本对比</a></li>
-            <li style="margin:12px 0;"><a href="#device-info" style="color:#2c3e50;">设备信息</a></li>
-            <li style="margin:18px 0;"><a href="https://signup.microsoft.com/" target="_blank" class="btn btn-primary" style="display:inline-block;">登录/注册</a></li>
-        </ul>
-    </nav>
-</aside>
-
-    <!-- 顶部区域 -->
-    <header class="hero" id="hero" data-enable-image="true" data-enable-particles="true">
-        <!-- 粒子效果容器 -->
-        <div id="particles-js" style="display: none;"></div>
-    
-        
-        <!-- 轮播控制按钮 -->
-        <button class="carousel-control carousel-prev" aria-label="上一张">
-            <i class="fa fa-angle-left"></i>
-        </button>
-        <button class="carousel-control carousel-next" aria-label="下一张">
-            <i class="fa fa-angle-right"></i>
-        </button>
-        
-        <!-- 背景切换控制按钮 -->
-        <div class="bg-controls">
-        </div>
-        
-        <div class="hero-content">
-            <h1 id="heroTitle">软件正版数字化</h1>
-            <h2 id="heroSubtitle">完美适配 极速解决</h2>
-        </div>
-
-       <div class="bg-images" aria-hidden="true">
-    <div class="bg-image" style="background-image: url('image/bg1.jpg');" 
-         data-title="软件正版数字化" data-subtitle="完美适配 极速解决"></div>
-    <div class="bg-image" style="background-image: url('image/bg2.png');" 
-         data-title="企业级授权" data-subtitle="安全、稳定"></div>
-    <div class="bg-image" style="background-image: url('image/bg3.png');" 
-         data-title="Office 套件" data-subtitle="效率、兼容"></div>
-</div>
-    </header>
-
-    <main>
-        <!-- 核心服务区域 -->
-        <section id="core-services" class="core-services">
-            <div class="container">
-                <h2 class="section-title">核心服务</h2>
-                <p class="section-subtitle">正版授权 无懈可击</p>
-                
-                <div class="services-grid">
-                    <!-- Windows 产品类别 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="image/win.png" alt="Windows Logo">
-                        </div>
-                        <h3 class="service-title">Windows 正版系统</h3>
-                        <p class="service-desc">任选·版本</p>
-                    </div>
-
-                    <!-- Office 产品类别 -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <img src="image/office365.png" alt="Office Logo">
-                        </div>
-                        <h3 class="service-title">Microsoft Office</h3>
-                        <p class="service-desc">任选·版本</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 正版选购区域 -->
-        <section id="purchase" class="purchase-section">
-            <div class="container">
-                <h2 class="section-title">正版选购</h2>
-                <p class="section-subtitle">完美兼容 稳如泰山</p>
-                
-                <div class="purchase-container">
-                    <div class="version-selector">
-                       
-                        <select id="windowsVersion">
-                            <option value="win10">Windows 10</option>
-                            <option value="win11">Windows 11</option>
-                            <option value="">Office</option>
-                            <option value="other">其它</option>
-                        </select>
-                        
-                        <a href="https://pay.ldxp.cn/shop/EMSDA9S1/rxcp3w" target="_blank" class="btn btn-primary">
-                            <i class="fa fa-shopping-cart mr-2"></i>在线购买
-                        </a>
-                    </div>
-
-                    <!-- 密钥选购区域js -->
-                    <div class="keys-section">
-                        <h3>密钥选购</h3>
-                        <div class="key-carousel">
-                            <div class="key-items" id="keyItems">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 产品展示区 -->
-        <section id="products" class="product-showcase">
-            <div class="container">
-                <h2 class="section-title">产品展示</h2>
-                <p class="section-subtitle">十全十美 功能强大</p>
-
-                <div class="product-grid">
-                    <div class="product-item" style="background-image:url('image/s1.jpg');">
-                        <div class="product-caption">windows正版彩盒装</div>
-                    </div>
-                    <div class="product-item" style="background-image:url('image/s2.jpg');">
-                        <div class="product-caption">office正版彩盒装</div>
-                    </div>
-                    <div class="product-item" style="background-image:url('image/s3.jpg');">
-                        <div class="product-caption">更多</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Windows差异区域 -->
-        <section id="comparison" class="version-comparison">
-            <div class="container">
-                <h2 class="section-title">Windows 版本差异</h2>
-                <p class="section-subtitle">功能对比，选择您的版本</p>
-                
-                <div class="table-wrapper">
-                    <table class="comparison-table">
-                        <thead>
-                            <tr>
-                                <th>版本</th>
-                                <th>核心定位</th>
-                                <th>高级安全功能</th>
-                                <th>管理工具</th>
-                                <th>虚拟化支持</th>
-                                <th>长期服务</th>
-                                <th>授权方式</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>家庭版</td>
-                                <td>个人家庭用户</td>
-                                <td>❌</td>
-                                <td>❌</td>
-                                <td>❌</td>
-                                <td>❌</td>
-                                <td>零售</td>
-                            </tr>
-                            <tr>
-                                <td><strong>专业版(推荐)</strong></td>
-                                <td>中小企业/专业用户</td>
-                                <td>✅（基础）</td>
-                                <td>组策略</td>
-                                <td>Hyper-V</td>
-                                <td>❌</td>
-                                <td>零售/批量</td>
-                            </tr>
-                            <tr>
-                                <td>教育版</td>
-                                <td>学校/教育机构</td>
-                                <td>✅（增强）</td>
-                                <td>组策略+教育管理</td>
-                                <td>Hyper-V</td>
-                                <td>❌</td>
-                                <td>教育批量</td>
-                            </tr>
-                            <tr>
-                                <td>企业版</td>
-                                <td>大型企业/组织</td>
-                                <td>✅（完整）</td>
-                                <td>完整MDM工具</td>
-                                <td>Hyper-V+高级虚拟化</td>
-                                <td>✅（LTSC）</td>
-                                <td>企业批量</td>
-                            </tr>
-                            <tr>
-                                <td>专业工作站版</td>
-                                <td>高性能工作站用户</td>
-                                <td>✅（基础）</td>
-                                <td>组策略+工作站优化</td>
-                                <td>Hyper-V+内存优化</td>
-                                <td>❌</td>
-                                <td>零售/批量</td>
-                            </tr>
-                            <tr>
-                                <td>IoT企业版</td>
-                                <td>物联网设备</td>
-                                <td>✅（嵌入式安全）</td>
-                                <td>嵌入式设备管理</td>
-                                <td>有限支持</td>
-                                <td>✅（10年）</td>
-                                <td>嵌入式授权</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-<!-- 用户评价区域 -->
-<section class="user-reviews">
+  <!-- 顶部横条 -->
+  <header class="top-bar">
     <div class="container">
-        <h2 class="section-title">用户评价</h2>
-        <p class="section-subtitle">一点一滴 真诚付出</p>
-        
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-avatar">张</div>
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">张明</div>
-                        <div class="review-date">2024-05-15</div>
-                    </div>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-                <div class="review-content">
-                    正版授权，非常专业；无限使用，强烈推荐！
-                </div>
+      <p>360手机刷机、纯净系统、解锁、Root、Twrp</p>
+    </div>
+  </header>
+
+  <!-- 主要内容区 -->
+  <main class="main-container">
+    <div class="content-wrapper" style="font-size:16px;">
+      <div class="section-title">
+        <span style="font-size:24px;">系统下载（全部机型）</span>
+      </div>
+
+      <!-- part1 -->
+      <ul class="device-list">
+        <li>
+          <a target="_blank" href="360os/360n7lite/360n7lite.html">
+            <img src="pic/n7lite.png" alt="360手机N7 Lite机型图片">
+            <p style="font-size:16px;">360手机N7 Lite</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n7pro/360n7pro.html">
+            <img src="pic/n7pro.png" alt="360手机N7 Pro机型图片">
+            <p style="font-size:16px;">360手机N7 Pro</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n7/360n7.html">
+            <img src="pic/n7.png" alt="360手机N7机型图片">
+            <p style="font-size:16px;">360手机N7</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n6lite/360n6lite.html">
+            <img src="pic/n6lite.png" alt="360手机N6 Lite机型图片">
+            <p style="font-size:16px;">360手机N6 Lite</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n6pro/360n6pro.html">
+            <img src="pic/n6pro.png" alt="360手机N6 Pro机型图片">
+            <p style="font-size:16px;">360手机N6 Pro</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n6/360n6.html">
+            <img src="pic/n6.png" alt="360手机N6机型图片">
+            <p style="font-size:16px;">360手机N6</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360vizza/360vizza.html">
+            <img src="pic/vizza.png" alt="360手机vizza机型图片">
+            <p style="font-size:16px;">360手机 vizza</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n5s/360n5s.html">
+            <img src="pic/n5s.png" alt="360手机N5S机型图片">
+            <p style="font-size:16px;">360手机 N5S</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n5/360n5.html">
+            <img src="pic/n5.png" alt="360手机N5机型图片">
+            <p style="font-size:16px;">360手机 N5</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n4a/360n4a.html">
+            <img src="pic/n4a.png" alt="360手机N4A机型图片">
+            <p style="font-size:16px;">360手机N4A</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360q5/360q5.html">
+            <img src="pic/q5.png" alt="360手机Q5机型图片">
+            <p style="font-size:16px;">360手机 Q5</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360q5plus/360q5plus.html">
+            <img src="pic/q5plus.png" alt="360手机Q5 Plus机型图片">
+            <p style="font-size:16px;">360手机 Q5 Plus</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n4s/360n4s.html">
+            <img src="pic/n4s.png" alt="360手机N4S骁龙版机型图片">
+            <p style="font-size:16px;">360手机 N4S骁龙版</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n4smtk/360n4smtk.html">
+            <img src="pic/n4s.png" alt="360手机N4S机型图片">
+            <p style="font-size:16px;">360手机N4S</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360n4/360n4.html">
+            <img src="pic/n4.png" alt="360手机N4全网通机型图片">
+            <p style="font-size:16px;">360手机N4全网通</p>
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="360os/360f4/360f4.html">
+            <img src="pic/f4.png" alt="360手机f4全网通机型图片">
+            <p style="font-size:16px;">360手机f4全网通</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/n4.png" alt="360手机N4移动版机型图片">
+            <p style="font-size:16px;">360手机N4移动版</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/f4.png" alt="360手机f4移动版机型图片">
+            <p style="font-size:16px;">360手机f4移动版</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/qikupro.png" alt="奇酷手机极客版机型图片">
+            <p style="font-size:16px;">奇酷手机极客版</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/dazen.png" alt="大神Note3全网通机型图片">
+            <p style="font-size:16px;">大神Note3全网通</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/dazen.png" alt="大神Note3移动版机型图片">
+            <p style="font-size:16px;">大神Note3移动版</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/qikupro.png" alt="奇酷手机旗舰版（全网通）机型图片">
+            <p style="font-size:16px;">奇酷手机旗舰版（全网通）</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/qikupro.png" alt="奇酷手机旗舰版（移动联通双4G）机型图片">
+            <p style="font-size:16px;">奇酷手机旗舰版（移动联通双4G）</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/qiku.png" alt="奇酷手机青春版（全网通）机型图片">
+            <p style="font-size:16px;">奇酷手机青春版（全网通）</p>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:;">
+            <img src="pic/qiku.png" alt="奇酷手机青春版（移动联通双4G）机型图片">
+            <p style="font-size:16px;">奇酷手机青春版（移动联通双4G）</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- part2 -->
+  <footer class="footer" style="font-size:16px;">
+    <div class="container">
+      <div class="footer-links" style="font-size:16px;">
+        <a href="src/notice/index.html" target="_blank">公告</a> |
+        <a href="src/donation/index.html" target="_blank">客服</a> |
+        <a href="javascript:void(0);" id="emailLink">邮件</a> |
+        <a href="src/webmp4/index.html" target="_blank">视频教程</a> |
+        <a href="src/tool/index.html" target="_blank">资源下载</a> |
+        <a href="javascript:void(0);" id="evaluateLink">用户评价</a> |
+        <a href="javascript:void(0);" id="aboutLink">关于</a> |
+        <script async type="text/javascript" src="//js.users.51.la/21405253.js"></script>
+      </div>
+      <span class="site-info">
+        备站：
+        <a href="https://360rom.github.io" target="_blank" style="color:#222 !important;">360rom.github.io</a>
+      </span>
+      <div style="margin-top: 5px;">
+        <a href="https://sim.360os.top" target="_blank" class="adult-link"
+          style="color:#222 !important;font-size:16px;">🔞成人福利 深夜独享</a>
+      </div>
+      <div id="showsectime" class="runtime" style="font-size:16px;"></div>
+    </div>
+  </footer>
+
+  <!-- 关于模态框 -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content" style="font-size:16px;">
+      <span class="close" id="closeAboutModal">×</span>
+      <div style="text-align:left;">
+        <p style="line-height:2em;">星光点点，不问赶路人…</p>
+        <p style="text-indent:2em; line-height:2em;">北冬少雅韵，心境随物迁</p>
+        <p style="text-indent:2em; line-height:2em;">
+          忆起此机的故事，伫立人生路途，自购第一机N6（4+32G），1300元左右；期间跌宕起伏，似不断打补丁
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          于辗转流年中，结业多年；亦在情怀、摩尔定律下，22年，隐匿在不知名角落；亦如18年青春岁月，一去不返。
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          后知，360手机"战略转型"的变动、使该品牌齿轮，停滞且定格在18-19年，随后官方，关闭多数服务...
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          后经半年之久的研究与测验，取得不限机型，100%成功率的幸运；其后，基于情怀，渐有感而发，上线本站、开放整合资源；为360机友，公益性提供/维护部分内容。
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          性价比，许是一种选择；但事、物在某些方面，究要在天平两端倾平；小众也是一种市场与选择。
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          现今，随手机、硬件、ROM等的迭代；刷机与折腾，也从互联网形态的转变和用户群体的需求，逐零碎凋落之态...但少年，还记得折腾之路，青春中成功的瞬间吗？
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          新的旅程，往往从告别开始，似如时代与我们的无奈，恰或正确的决择。
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          再次驻足回望...或许某天，这方小站，也会悄然落幕，从此相忘于江湖。
+        </p>
+        <p style="text-indent:2em; line-height:2em;">
+          最后，愿360手机回归；See You Again…
+        </p>
+      </div>
+      <p style="text-align:right; line-height:3;">
+        <span style="color:#A4A4A4;">by.2022年春夏之夜</span>
+      </p>
+      <p style="text-indent:2em; line-height:1.5; text-align: center;">
+        提示:点框外或X 均可退出
+      </p>
+    </div>
+  </div>
+  <!-- part 4弹窗 -->
+  <div class="web_notice"
+    style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.5);z-index: 99999;display: flex;align-items: center;justify-content: center;">
+    <div
+      style="position: relative;width: 90%;max-width: 700px;background: #FFF;border-radius: 40px;padding: 60px 40px;box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+      <div style="font-size: 16px;margin-top: 10px;line-height: 28px;color: #666;">
+        <p style="text-align: left;"><strong>资源：</strong><a href="https://tool.360os.top"
+            target="_blank">tool.360os.top</a></p>
+        <p style="text-align: left;"><strong>关于：</strong>2021-维护至今；综考虑，该机近无，预不久“清空/关闭”，感谢理解。</p> 
+        <p style="text-align: left;margin-top: 15px;padding-left: 20px;position: relative;">
+          <i style="position: absolute;left: 0;top: 5px;color: #4f9aff;">•</i> 刷纯净版：无任何广告
+        </p>
+        <p style="text-align: left;margin-top: 10px;padding-left: 20px;position: relative;">
+          <i style="position: absolute;left: 0;top: 5px;color: #4f9aff;">•</i> 支持下载：刷机包+刷机工具+教程
+        </p>
+        <p style="text-align: left;margin-top: 10px;padding-left: 20px;position: relative;">
+          <i style="position: absolute;left: 0;top: 5px;color: #4f9aff;">•</i> 技术支持："位置穿越" 功能修复使用
+        </p>
+        <p
+          style="margin-top: 20px;padding: 12px;background: #fff8f8;border-left: 4px solid #ff6b6b;border-radius: 4px;color: #cd5c5c;text-align: left;">
+          <strong>注：</strong>访问卡：刷新/换网/浏览器
+        </p>
+      </div>
+      <a style="display: block;background: linear-gradient(135deg, #7b88ff, #98a3ff);color: #FFF;text-align: center;font-weight: bold;font-size: 20px;line-height: 64px;margin: 0 auto;margin-top: 40px;border-radius: 32px;width: 80%;transition: all 0.3s;box-shadow: 0 4px 12px rgba(123,136,255,0.4);"
+        onclick="document.querySelector('.web_notice').remove()">
+        知道了
+      </a>
+    </div>
+  </div>
+  </div>
+  <!-- 邮件模态框 -->
+  <div id="emailModal" class="modal">
+    <div class="modal-content"
+      style="width: 300px; margin: 15% auto; padding: 30px 20px 20px 20px; text-align: center; position: relative; font-size:16px;">
+      <span class="close" id="closeEmailModal">×</span>
+      <p style="font-weight: bold; color: #7a7a7a; margin: 10px 0 0 0;">投递：os@360os.top</p>
+    </div>
+  </div>
+  <!-- 用户评价模态框 -->
+  <div id="evaluateModal" class="modal">
+    <div class="modal-content"
+      style="width: 90%; max-width: 600px; height: 80vh; padding:0; position:relative; font-size:16px;">
+      <span class="close" id="closeEvaluateModal">×</span>
+      <iframe src="src/evaluate/index.html" frameborder="0" style="width:100%;height:100%;border-radius:12px;"></iframe>
+    </div>
+  </div>
+
+  <!-- 右下角固定按钮区域 -->
+  <div class="fixed-bottom-buttons"
+    style="position: fixed; right: 18px; bottom: 18px; z-index: 9999; display: flex; flex-direction: column; gap: 16px;">
+    <!-- 微信图标 -->
+    <div id="wechat-btn">
+      <i class="fa fa-weixin" style="font-size:28px;color:#52c41a;"></i>
+    </div>
+    <!-- 置顶按钮 -->
+    <div id="scroll-top-btn">
+      <i class="fa fa-arrow-up" style="font-size:24px;color:#1890ff;"></i>
+    </div>
+    <!-- 置底按钮 -->
+    <div id="scroll-bottom-btn">
+      <i class="fa fa-arrow-down" style="font-size:24px;color:#faad14;"></i>
+    </div>
+  </div>
+  <!-- 微信二维码弹窗 -->
+  <div id="wechat-qrcode">
+    <img src="pic/wx-gzh.png" alt="微信二维码" style="width:120px;height:120px;">
+  </div>
+
+  <!-- webmp3 音乐播放器区域 -->
+  <div id="QPlayer">
+    <div id="pContent">
+      <div id="player">
+        <span class="cover"></span>
+        <div class="ctrl">
+          <div class="musicTag marquee">
+            <strong>Title</strong>
+            <span> - </span>
+            <span class="artist">Artist</span>
+          </div>
+          <div class="progress">
+            <div class="timer left">0:00</div>
+            <div class="contr">
+              <div class="rewind icon"></div>
+              <div class="playback icon"></div>
+              <div class="fastforward icon"></div>
             </div>
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-avatar">李</div>
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">李小雨</div>
-                        <div class="review-date">2024-04-28</div>
-                    </div>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                </div>
-                <div class="review-content">
-                    价格比官方便宜；而且是真正的正版授权。回购多次，下一代，会继续支持！
-                </div>
+            <div class="right">
+              <div class="liebiao icon"></div>
             </div>
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="reviewer-avatar">王</div>
-                    <div class="reviewer-info">
-                        <div class="reviewer-name">王建国</div>
-                        <div class="review-date">2024-06-02</div>
-                    </div>
-                    <div class="rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                </div>
-                <div class="review-content">
-                    技术支持很到位，帮我解决了系统升级过程中的各种问题。五星好评！
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="ssBtn">
+        <div class="adf"></div>
+      </div>
     </div>
-</section>
-        
-        <!-- 设备信息区域 -->
-        <section id="device-info" class="device-info">
-            <div class="container">
-                <div class="info-header">
-                    <h2 class="info-title">您的信息</h2>
-                    <i class="fa fa-refresh refresh-icon" id="refreshInfo" title="刷新信息"></i>
-                </div>
-                <p class="section-subtitle">系统检测 仅供参考</p>
-                
-                <div class="info-grid" id="deviceInfoGrid">
-                </div>
-            </div>
-        </section>
-    </main>
+    <ol id="playlist"></ol>
+  </div>
 
-    <!-- 页脚区域 -->
-    <footer>
-        <div class="container">
-            <div class="footer-container">
-                <!-- 远程服务 -->
-                <div class="footer-section">
-                    <h3>
-                        远程服务
-                        <i class="fa fa-angle-double-up toggle-icon" style="margin-left: 0.2px;"></i>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="https://sunlogin.oray.com/download?categ=personal" target="_blank">向日葵</a></li>
-                        <li><a href="https://www.rdviewer.com/" target="_blank">Rdview</a></li>
-                    </ul>
-                </div>
+  <script src="src/webmp3/js/jquery.min.js"></script>
+  <script src="src/webmp3/js/jquery.marquee.min.js"></script>
+  <script>
+    // webmp3 播放器歌曲列表
+    var playlist = [
+      {
+        title: "See You Again - ",
+        artist: "",
+        cover: "https://p2.music.126.net/6MhAiNsF-Je1DtG15nY5ug==/109951164497419892.jpg?param=106x106F",
+        mp3: "https://workdrive.zohopublic.com.cn/external/a44da1ff17bb0eb428cbb9907eef7b33e30b1d6c31ee28709e58ec3a3269110a/download?directDownload=true"
+      },
+    ];
+    var isRotate = true;
+    var autoplay = false;
+  </script>
+  <script src="src/webmp3/js/player.js"></script>
+  <script>
+    function bgChange() {
+      var lis = $('.lib');
+      for (var i = 0; i < lis.length; i += 2)
+        lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
+    }
+    window.onload = bgChange;
+  </script>
+  <!-- 移动端设备判断和跳转 -->
+  <script type="text/javascript">
+    function browserRedirect() {
+      var sUserAgent = navigator.userAgent.toLowerCase();
+      var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+      var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+      var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+      var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+      var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+      var bIsAndroid = sUserAgent.match(/android/i) == "android";
+      var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+      var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
 
-                <!-- 系统部署 -->
-                <div class="footer-section">
-                    <h3>
-                        系统部署
-                        <i class="fa fa-angle-double-up toggle-icon" style="margin-left: 0.2px;"></i>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="https://msdn.itellyou.cn/" target="_blank">MSDN</a></li>
-                        <li><a href="https://www.wepe.com.cn/" target="_blank">WePe</a></li>
-                        <li><a href="https://otp.landian.vip/zh-cn/" target="_blank">Office</a></li>
-                    </ul>
-                </div>
+      if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+        window.location.href = 'index.htm';
+      } else {
+        // window.location= '';
+      }
+    }
 
-                <!-- 帮助 -->
-                <div class="footer-section">
-                    <h3>
-                        帮助
-                        <i class="fa fa-angle-double-up toggle-icon" style="margin-left: 0.2px;"></i>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="https://www.kdocs.cn/l/cghFNwCAiYQf" target="_blank">在线文档</a></li>
-                        <li><a href="https://iknow.lenovo.com.cn/detail/200014" target="_blank">Bitlocker</a></li>
-                        <li><a href="https://www.kdocs.cn/l/cuNACF1VFq2F" target="_blank">Office二级</a></li>
-                        <li><a href="https://www.huorong.cn/" target="_blank">火绒</a></li>
-                    </ul>
-                </div>
+    browserRedirect(); //调用自身，页面一打开就开始跳转
 
-                <!-- 常见问题 -->
-                <div class="footer-section">
-                    <h3>
-                        常见问题
-                        <i class="fa fa-angle-double-up toggle-icon" style="margin-left: 0.2px;"></i>
-                    </h3>
-                    <ul class="footer-links">
-                       <li><a href="Privacy/index.html" target="_blank">服务条款</a></li>
-                        <li><a href="#" id="noticeBtn">公告</a></li>
-                        <li><a href="#" id="faqBtn">FAQ</a></li>
-                    </ul>
-                </div>
+    // 页面加载完成后执行
+    window.addEventListener('DOMContentLoaded', setUpdateTime);
 
-                <!-- 联系我们 -->
-                <div class="footer-section">
-                    <h3>
-                        联系我们
-                        <i class="fa fa-angle-double-up" style="margin-left: 0.2px;"></i>
-                    </h3>
-                    <ul class="footer-links">
-                        <li><a href="mailto:andu666@foxmail.com"><i class="fa fa-envelope-o mr-2"></i> 邮件：andu666@foxmail.com</a></li>
-                        <li><a href="#" id="contactWeChatBtn"><i class="fa fa-weixin mr-2"></i> 微信/付款</a></li>
-                    </ul>
-                </div>
-            </div>
+   // 动态设置更新时间
+function setUpdateTime() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  // 只显示年份和月份，不显示日期
+  const updateTimeStr = `${year}年${month}月`;
 
-            <div class="footer-divider"></div>
+  const updateTimeElement = document.getElementById('updateTime');
+  if (updateTimeElement) {
+    updateTimeElement.textContent = updateTimeStr;
+  }
+}
 
-            <div class="copyright">
-                © 2018-至今 版权所有 | 最后更新：<span id="lastUpdate"></span>
-            </div>
-        </div>
-    </footer>
+// 立即执行函数
+setUpdateTime();
 
-    <!-- 右下角功能按钮 -->
-    <div class="action-buttons" aria-hidden="false">
-        <button id="toTop" class="action-btn" title="回到顶部"><i class="fa fa-angle-up" aria-hidden="true"></i></button>
-        <button id="toBottom" class="action-btn" title="到底部"><i class="fa fa-angle-down" aria-hidden="true"></i></button>
-        <button id="wechatBtn" class="action-btn" title="微信二维码"><i class="fa fa-wechat" aria-hidden="true"></i></button>
-    </div>
-
-    <div id="wechatQrCode" class="wechat-qrcode" aria-hidden="true">
-        <img src="image/wx-code.png" alt="微信二维码">
-        <p>客户经理</p>
-    </div>
-
-    <!-- 公告模态框 -->
-    <div id="noticeModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(44,62,80,0.4);z-index:999;">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;max-width:90vw;width:500px;padding:30px;box-shadow:0 8px 32px rgba(0,0,0,0.18);text-align:center;position:relative;">
-            <button id="noticeClose" style="position:absolute;top:15px;right:15px;background:none;border:none;font-size:1.5rem;color:#777;cursor:pointer;">×</button>
-            <div style="font-size:1.5rem;font-weight:bold;margin-bottom:20px;color:#e74c3c;">重要通知 | 2018运营-至今</div>
-            <div style="text-align: center; margin-top: 10px; font-size: 1rem; color: #333;">
-                全网最低价 100%正版 企业更优惠
-            </div>
-            <div style="text-align:left;font-size:1rem;line-height:1.8;margin:20px 0;">
-                <p><strong>因密钥可复制、虚拟品；人群问题：带来损失</strong></p>
-                <p>1. 恶意白嫖，恶意退款的人</p>
-                <p>2. 小白人群；浪费后，且要退款</p>
-                <p style="color:#e74c3c;font-weight:bold;text-align:center;">为更好的解决，现仅：远程协助，成功率100%</p>
-                <p style="color:#e74c3c;font-weight:bold;">拒绝任何：恶意白嫖；必须：先付后协（失败必退）</p>
-                <br>
-                <p><strong>提示：</strong>如您"闲鱼"下单，因我方，支付宝不常用，请转微信</p>
-                <p><strong>承诺：</strong>100%正版、100%账户绑定、100%真实、100%放心</p>
-                <p><strong>优惠：</strong>购入2个的，第2个，仅售半价</p>
-            </div>
-            <div style="position:relative;max-width:100%;width:200px;margin:10px auto;display:block;">
-                <img id="wx1Image" src="image/wx1.png" alt="微信支付二维码" style="max-width:100%;width:100%;border-radius:6px;border:1px solid #eee;transition: transform 0.3s ease;">
-                <div style="position:absolute;top:-10px;right:-10px;display:flex;gap:5px;">
-                    <button id="zoomIn" style="width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;box-shadow:0 1px 3px rgba(0,0,0,0.1);">+</button>
-                    <button id="zoomOut" style="width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold;box-shadow:0 1px 3px rgba(0,0,0,0.1);">-</button>
-                </div>
-                <div style="text-align: center; margin-top: 10px; font-size: 1rem; color: #333;">
-                    感谢理解，提供3年质保
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ模态框 -->
-    <div id="faqModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(44,62,80,0.4);z-index:999;">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;max-width:90vw;width:400px;padding:30px 20px;box-shadow:0 8px 32px rgba(0,0,0,0.18);text-align:center;">
-            <div style="font-size:1.2rem;font-weight:bold;margin-bottom:18px;">常见问题 FAQ</div>
-            <div style="text-align:left;font-size:1rem;line-height:1.8;">
-                <div>
-                    <b>问：</b>是否，正版永久？<br><b>答：</b>是；账户绑定
-                    <hr style="border:none;border-bottom:1px solid #e0e0e0;margin:8px 0;">
-                </div>
-                <div>
-                    <b>问：</b>换或多台电脑，能用<br><b>答：</b>是
-                    <hr style="border:none;border-bottom:1px solid #e0e0e0;margin:8px 0;">
-                </div>
-                <div>
-                    <b>问：</b>是否，有售后<br><b>答：</b>质保一年
-                    <hr style="border:none;border-bottom:1px solid #e0e0e0;margin:8px 0;">
-                </div>
-                <div>
-                    <b>问：</b>如何查看，正版激活？<br><b>答：</b>设置→系统→激活→激活状态
-                    <hr style="border:none;border-bottom:1px solid #e0e0e0;margin:8px 0;">
-                </div>
-                <img src="image/win-sq.png" alt="激活状态" style="max-width:100%;width:220px;margin:10px auto;display:block;border-radius:6px;">
-            </div>
-            <button id="faqClose" style="margin-top:18px;padding:6px 24px;border:none;background:#0078d7;color:#fff;border-radius:4px;font-size:1rem;cursor:pointer;">关闭</button>
-        </div>
-    </div>
-
-    <!-- 联系我们模态框（新增） -->
-    <div id="contactModal" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(44,62,80,0.4);z-index:999;">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:10px;max-width:90vw;width:420px;padding:22px;box-shadow:0 8px 32px rgba(0,0,0,0.18);text-align:center;">
-            <button id="contactClose" style="position:absolute;top:12px;right:12px;background:none;border:none;font-size:1.5rem;color:#777;cursor:pointer;">×</button>
-            <div style="font-size:1.3rem;font-weight:bold;margin-bottom:12px;color:#2c3e50;">联系我们</div>
-            <div style="font-size:1rem;color:#333;margin-bottom:12px;text-align:left;">
-                <p style="margin:6px 0;"><strong>邮件：</strong><a href="mailto:andu666@foxmail.com">andu666@foxmail.com</a></p>
-                <p style="margin:6px 0;"><strong>微信/付款：</strong>扫码联系或支付</p>
-            </div>
-            <div style="margin:10px auto;max-width:260px;">
-                <img src="image/wx1.png" alt="微信二维码" style="width:100%;height:auto;border-radius:6px;border:1px solid #eee;display:block;">
-            </div>
-            <div style="font-size:0.95rem;color:#666;margin-top:12px;">
-                长按或扫码添加，支持付款与咨询
-            </div>
-            <div style="margin-top:14px;">
-                <button id="contactCloseBtn" style="padding:8px 18px;border:none;background:#0078d7;color:#fff;border-radius:6px;cursor:pointer;">关闭</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 页脚结束前插入脚本引用 -->
-    <script src="js/winmain.js"></script>
+  </script>
+  <!-- 权限提示弹窗 -->
+  <div class="permission-alert"></div>
+  <script src="js/page_main.js"></script>
 </body>
+
 </html>
